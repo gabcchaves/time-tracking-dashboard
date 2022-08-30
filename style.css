@@ -206,13 +206,15 @@ body * { font-size: 18px; }
 }
 
 #profile > nav input[type=radio] {
-	display: none;
+	display: inline;
+	-webkit-appearance: none;
 }
 
 #profile > nav input[type=radio]:checked+label {
 	color: white;
 }
 
-#profile > nav input[type=radio]:hover+label {
+#profile > nav label:hover {
 	color: white;
+	cursor: pointer;
 }
