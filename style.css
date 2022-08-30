@@ -148,15 +148,9 @@ body * { font-size: 18px; }
 	padding: 10%;
 }
 
-#profile nav label { color: var(--desaturated-blue); padding: 3% 0; }
-#profile nav label:hover {
-	color: white;
-	cursor: pointer;
-}
+#profile nav button { color: var(--desaturated-blue); }
 
-#profile nav input[type=radio] {
-	-webkit-appearance: none;
-}
+#profile nav button:hover { color: white; }
 
 #work {
 	grid-row: 1;
