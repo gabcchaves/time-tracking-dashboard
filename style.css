@@ -36,13 +36,13 @@ button:hover { cursor: pointer; }
 
 /* General settings */
 body {
-	background-color: var(--very-dark-blue);
+	min-width: 100vw;
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	min-width: 100vw;
-	min-height: 100vh;
+	background-color: var(--very-dark-blue);
 }
 
 body * { font-size: 18px; }
@@ -51,33 +51,33 @@ body * { font-size: 18px; }
 	display: grid;
 	grid-template-rows: 1fr 1fr;
 	grid-template-columns: repeat(4, 1fr);
-	gap: 1vmax;
+	gap: 2vw;
+	width: 70%;
+	height: 70%;
 }
 
 .card {
-	border-radius: 15px;
 	display: flex;
 	flex-direction: column;
+	border-radius: 15px;
 	justify-content: flex-end;
 	background-repeat: no-repeat;
-	background-size: 25%;
-	background-position:  90% -7%;
-}
-
-.card p {
-	color: var(--pale-blue);
+	background-size: 30%;
+	background-position: 90% -5%;
 }
 
 .card-info {
-	background-color: var(--dark-blue);
 	border-radius: 10px;
+	background-color: var(--dark-blue);
 	height: 80%;
 	display: grid;
-	grid-template-rows: 20% 60% 1fr;
-	grid-template-columns: 1fr 30%;
-	padding: 10%;
+	grid-template-rows: 20% 1fr 10%;
+	grid-template-columns: 1fr 10%;
+	padding: 12%;
 	box-sizing: border-box;
 }
+
+.card-info:hover { filter: brightness(1.8); cursor: pointer; }
 
 .card-category {
 	grid-row: 1;
@@ -88,69 +88,32 @@ body * { font-size: 18px; }
 .card-menu {
 	grid-row: 1;
 	grid-column: 2;
-	justify-self: flex-end;
 }
 
-.card-menu:hover { filter: brightness(1.4); }
+.card-menu:hover { filter: brightness(2); }
 
 .hours {
 	grid-row: 2;
 	grid-column: 1;
-	color: white;
+	align-self: center;
+	font-size: 2.5rem;
 	font-weight: 400;
+	color: white;
 }
 
 .last-track {
 	grid-row: 3;
 	grid-column: 1;
+	margin: 0;
+	color: var(--pale-blue);
+	font-size: 0.8rem;
 }
 
 #profile {
-	display: flex;
-	flex-direction: column;
 	grid-row: 1 / 3;
 	grid-column: 1;
 	background-color: var(--dark-blue);
 }
-
-#profile div:first-child {
-	background-color: var(--blue);
-	border-radius: inherit;
-	height: 65%;
-	padding: 10%;
-}
-
-#profile div:first-child > * { width: 100%; }
-
-#profile div:first-child picture img {
-	width: 30%;
-	border: 0.2vw solid white;
-	border-radius: 50%;
-}
-
-#profile div:first-child p {
-	margin-top: 15%;
-	margin-bottom: 0;
-}
-
-#profile div:first-child h3 {
-	font-size: 2em;
-	font-weight: 300;
-	margin-top: 0;
-	color: white;
-}
-
-#profile nav {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	padding: 10%;
-}
-
-#profile nav button { color: var(--desaturated-blue); }
-
-#profile nav button:hover { color: white; }
 
 #work {
 	grid-row: 1;
@@ -195,73 +158,61 @@ body * { font-size: 18px; }
 	background-image: url("images/icon-self-care.svg");
 }
 
-/* Mobile settings */
-@media screen and (max-width: 1080px) {
-	.dashboard {
-		display: flex;
-		flex-direction: column;
-		width: 90%;
-		height: 90%;
-	}
+#profile > div {
+	display: flex;
+	flex-direction: column;
+	padding: 10%;
+	background-color: var(--blue);
+	border-radius: inherit;
+	height: 60%;
+}
 
-	.card {
-		margin: 3% 0;
-	}
+#profile > div > * { width: 100%; }
 
-	#profile div:first-child {
-		display: grid;
-		grid-template-rows: 1fr 1fr;
-		grid-template-columns: 1fr 1fr;
-		height: 30%;
-	}
+#profile > div picture img {
+	width: 40%;
+	border: 0.5vmin solid white;
+	border-radius: 50%;
+}
 
-	#profile > * {
-		height: 10vh !important;
-	}
+#profile > div p { color: var(--pale-blue); }
 
-	#profile div:first-child picture {
-		grid-row: 1 / 3;
-		grid-column: 1;
-	}
+#profile > div h3 {
+	font-size: 2rem;
+	font-weight: 300;
+	color: white;
+	margin-top: 0;
+}
 
-	#profile div:first-child h3 {
-		grid-row: 2;
-		grid-column: 2;
-		font-size: 1.1rem;
-	}
+#profile > nav {
+	display: flex;
+	flex-direction: column;
+	padding: 10%;
+	flex: 1;
+}
 
-	#profile div:first-child p {
-		grid-row: 1;
-		grid-column: 2;
-		font-size: 0.6rem;
-	}
+#profile > nav > div {
+	display: flex;
+	align-items: center;
+	padding: 3% 0;
+}
 
-	#profile nav {
-		flex-direction: row;
-	}
+#profile > nav > div:hover { cursor: pointer; }
 
-	.card-info {
-		grid-template-rows: 1fr 1fr;
-		grid-template-columns: 1fr 1fr;
-	}
+#profile > nav > div label {
+	flex: 1;
+	height: 100%;
+	color: var(--desaturated-blue);
+}
 
-	.card-category {
-		grid-row: 1;
-		grid-column: 1;
-	}
+#profile > nav input[type=radio] {
+	display: none;
+}
 
-	.card-menu {
-		grid-row: 2;
-		grid-column: 2;
-	}
+#profile > nav input[type=radio]:checked+label {
+	color: white;
+}
 
-	.hours {
-		grid-row: 2;
-		grid-column: 1;
-	}
-
-	.last-track {
-		grid-row: 2;
-		grid-column: 2;
-	}
+#profile > nav input[type=radio]:hover+label {
+	color: white;
 }
